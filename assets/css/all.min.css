@@ -11,8 +11,16 @@ body {
 }
 
 .container-head h1 {
+    text-transform: uppercase;
     color: #333;
     font-size: 48px;
+}
+
+.container-head h2 {
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+    margin-top: 10px;
 }
 
 .container {
@@ -26,8 +34,12 @@ body {
     max-width: 1200px;
 }
 
+.bg-light {
+    background-color: #6c5ce7!important;
+    color: #fff;
+}
+
 h1, h2, h3 {
-    background: #f2f2f2;
     padding: 10px 20px;
     border-radius: 10px;
 }
@@ -41,16 +53,16 @@ h1 {
 h2 {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 36px;
+    font-size: 32px;
 }
 
 h3 {
     font-size: 24px;
 }
 
-/* CSS untuk elemen-elemen teks tertentu */
+/* CSS untuk Sub Heading */
 .sub-heading {
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     font-weight: bold;
     color: #333;
@@ -59,6 +71,7 @@ h3 {
 }
 
 .lead {
+    font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
 }
@@ -121,19 +134,41 @@ a:hover {
     border: 2px solid #007bff;
     border-radius: 30px;
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     color: #007bff;
-}
-
-.neumorphism-button:hover {
+  }
+  
+  .neumorphism-button:hover {
     background-color: #007bff;
     color: #fff;
-    transform: translateY(-5px);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.5);
-}
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5);
+  }
+  
+  .neumorphism-button .fas {
+    background-color: #007bff;
+    padding: 8px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .neumorphism-button:hover .fas {
+    background-color: #fff;
+    color: #007bff;
+  }
+  
+  .neumorphism {
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 5px 5px 10px #bfbfbf, -5px -5px 10px #ffffff;
+}  
 
 /* CSS untuk grid Rupam */
 .rupam-grid {
@@ -144,7 +179,7 @@ a:hover {
     gap: 5px;
 }
 
-.rupam-grid h1 {
+.rupam-grid h1, .rupam-grid h2 {
     font-size: 36px;
     text-align: center;
     font-weight: bold;
@@ -153,7 +188,7 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.rupam-grid h2 {
+.rupam-grid h3 {
     font-size: 24px;
     text-align: center;
     font-weight: bold;
@@ -162,23 +197,14 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.rupam-grid h3 {
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
-    color: #007bff;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 /* CSS untuk kontainer penghuni */
-.penghuni-container {
+.penghuni-container, .inventaris-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.penghuni-item {
+.penghuni-item, .inventaris-item {
     display: flex;
     justify-content: space-between;
     border: 1px solid #ddd;
@@ -186,41 +212,15 @@ a:hover {
     border-radius: 5px;
 }
 
-.penghuni-label {
+.penghuni-label, .inventaris-label {
     flex-basis: 50%;
     font-weight: bold;
 }
 
-.penghuni-value {
+.penghuni-value, .inventaris-value {
     flex-basis: 50%;
     text-align: right;
-    color: #007bff;
     font-weight: bold;
-}
-
-/* CSS untuk kontainer inventaris */
-.inventaris-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.inventaris-item {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.inventaris-label {
-    flex-basis: 50%;
-    font-weight: bold;
-}
-
-.inventaris-value {
-    flex-basis: 50%;
-    text-align: right;
 }
 
 /* CSS untuk kontainer pengaturan */
@@ -236,17 +236,22 @@ a:hover {
 }
 
 .control-container h1 {
-    color: #ff5733;
+    color: #2c3e50;
     font-size: 42px;
 }
 
 .control-container h2 {
-    color: #ff5733;
-    font-size: 30px;
-}
+    text-transform: uppercase;
+    font-size: 28px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
 
 .control-container h3 {
-    color: #ff5733;
+    color: #2c3e50;
     font-size: 20px;
 }
 
@@ -254,8 +259,7 @@ a:hover {
     font-weight: bold;
 }
 
-.control-container select,
-.control-container button {
+.control-container select, .control-container button {
     font-weight: bold;
     text-transform: uppercase;
     width: 100%;
@@ -264,7 +268,7 @@ a:hover {
     border-radius: 5px;
 }
 
-.control-container select {
+.control-container select, .control-container input {
     margin-bottom: 10px;
 }
 
@@ -285,6 +289,8 @@ a:hover {
 
 /* CSS untuk footer */
 footer {
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 10px;
 }
 
@@ -294,7 +300,7 @@ footer p {
     font-style: normal;
 }
 
-footer p.website {
+footer .website p {
     font-size: 10px;
     font-style: italic;
 }
@@ -305,19 +311,61 @@ footer p span {
 }
 
 /* CSS untuk kontainer gambar */
-#imageContainer {
+#imageContainer, #imageForm {
     max-width: 100%;
     margin-bottom: 10px;
 }
 
-#uploadedImage {
-    max-width: 100%;
+#imageContainer {
     width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
     border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+#uploadedImage {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* Gaya untuk container form */
+#imageForm, #jadwalForm {
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 5px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control, .form-select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.form-select {
+    border: 2px solid #ccc;
 }
 
 /* CSS untuk kontainer jarak dalam control-container */
@@ -338,7 +386,6 @@ footer p span {
 #pengaturanPenghuniForm {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 #pengaturanPenghuniForm h2 {
@@ -351,7 +398,8 @@ footer p span {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
 }
 
 #pengaturanPenghuniForm .form-label {
@@ -366,23 +414,18 @@ footer p span {
     border-radius: 5px;
 }
 
-#pengaturanPenghuniForm .btn {
-    flex-basis: 40%;
-    background-color: #007bff;
-    color: #fff;
-    border: 0;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-}
-
 #pengaturanPenghuniForm .btn:hover {
     background-color: #0056b3;
 }
 
 #pengaturanPenghuniForm .form-control[type="number"] {
     width: 40%;
+    background-color: #f2f2f2;
+}
+
+#pengaturanPenghuniForm .form-control[type="number"]:focus {
+    width: 40%;
+    background-color: #fff;
 }
 
 /* CSS untuk grid-container */
@@ -421,14 +464,21 @@ footer p span {
     background-color: #0056b3;
 }
 
-.grid-container input[type="file"] {
+.grid-container select, .grid-container input[type="file"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
     border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
 }
 
-.grid-container select {
+.grid-container input[type="file"]:focus {
+    border-color: #ff6b6b; 
+    outline: none;
+}
+
+.grid-container select, .grid-container input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -437,4 +487,76 @@ footer p span {
 
 .grid-container > * {
     align-self: center;
+}
+
+/* CSS untuk menampilkan modal di tengah */
+.custom-modal .modal-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.custom-modal .modal-content {
+    background-color: #f9f9f9;
+    border: 1px solid #d1d1d1;
+    box-shadow: 
+        0 2px 5px rgba(0, 0, 0, 0.2),
+        0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.custom-modal .modal-title {
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+}
+
+.custom-modal .modal-body {
+    text-align: justify;
+    font-size: 16px;
+}
+
+.custom-modal .modal-body a {
+    text-decoration: none;
+}
+
+.custom-modal .modal-body .buildwith {
+    border-top: 1px solid #dfe6e9;
+    padding-top: 20px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+}
+
+.custom-modal .modal-footer {
+    justify-content: center;}
+
+.custom-modal .modal-footer button {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-modal .modal-footer button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
