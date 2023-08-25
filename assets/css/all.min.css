@@ -1,3 +1,4 @@
+@media (max-width: 768px) {
 /* CSS untuk body dan elemen-elemen teks */
 body {
     background-color: #f2f2f2;
@@ -559,4 +560,5 @@ footer p span {
 .custom-modal .modal-footer button:hover {
     background-color: #0056b3;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
 }
