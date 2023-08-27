@@ -1,7 +1,7 @@
 # E-ASTEKPAM - Aplikasi Sistem Elektronik untuk Pelaporan Apel Serah Terima Regu Pengamanan
 
 <p align="center">
-  <img src="https://sippn.menpan.go.id/images/article/large/logorutwsb1.png" alt="<strong>E-ASTEKPAM</strong> Logo" width="200" height="200">
+  <img src="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/github.svg" alt="<strong>E-ASTEKPAM</strong> Logo" width="200" height="200">
 </p>
 
 Selamat datang di repositori resmi <strong>E-ASTEKPAM</strong>, sebuah aplikasi sistem elektronik berbasis web yang dirancang khusus untuk memudahkan proses pelaporan Apel Serah Terima Regu Pengamanan dengan cara meregenerated text menjadi image dengan format (<i>.png</i>). Aplikasi ini memberikan kemudahan dalam mencatat unit, tanggal, peralatan, serta arahan yang terkait dengan keamanan secara efisien.
