@@ -43,5 +43,7 @@ Jika Anda memiliki pertanyaan, saran, atau masalah teknis, jangan ragu untuk men
 
 Terima kasih telah memilih <strong>E-ASTEKPAM</strong> untuk memudahkan proses pelaporan Apel Serah Terima Regu Pengamanan. Kami berharap aplikasi berbasis web ini dapat membantu Anda mencapai keamanan yang optimal dengan lebih efisien.
 
+<p align="center">
 Salam,
 Tim <strong>E-ASTEKPAM</strong>
+</p>
