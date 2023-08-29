@@ -36,7 +36,7 @@ Sebelum Anda menggunakan <strong>E-ASTEKPAM</strong>, pastikan sistem Anda memen
 ## Screenshoot
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/eliyantosarage/e-astekpam@main/assets/img/screenshot.png" alt="Screenshot Aplikasi" width="100%" height="auto">
+  <img src="https://cdn.jsdelivr.net/gh/eliyantosarage/e-astekpam@main/assets/img/laporan_29_08_2023_224128143_934831.png" alt="Screenshot Aplikasi" width="100%" height="auto">
 </p>
 
 ## Kontribusi
