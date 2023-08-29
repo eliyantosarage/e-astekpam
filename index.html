@@ -10,7 +10,6 @@
     <!-- Tambahkan link CSS Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <!-- Tambahkan link CSS Default -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/e-astekpam/assets/css/all.min.css"> -->
     <link href="/assets/css/all.min.css" rel="stylesheet">
     <!-- Tambahkan link CSS Fontawesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/6.4.2/css/all.min.css">
@@ -32,7 +31,7 @@
     <!-- Control Container -->
     <div class="control-container">
       <!-- Judul di luar container -->
-      <h2 class="neumorphism bg-primary mb-3 text-center text-light">Pengaturan</h2>
+      <h2 class="neumorphism bg-dark p-3 mt-3 mb-3 text-light"><i class="fa-regular fa-gear-complex-code"></i> Pengaturan</h2>
       <div class="grid-container">
         <form id="jadwalForm">
           <div class="mb-3">
@@ -42,7 +41,8 @@
               <option value="siang_malam">Siang ke Malam</option>
               <option value="malam_pagi">Malam ke Pagi</option>
             </select>
-            <button type="button" id="terapkanJadwal" class="btn btn-primary">Terapkan</button>
+            <button type="button" id="terapkanJadwal" class="btn btn-primary">Terapkan Jadwal</button>
+            <div class="custom-notification" id="jadwalCustomNotification">Jadwal telah diterapkan!</div>
           </div>
         </form>
         <form id="imageForm">
@@ -50,10 +50,11 @@
             <label for="uploadImage" class="form-label">Unggah Gambar :</label>
             <input type="file" id="uploadImage" class="form-control">
             <button type="button" id="uploadImageButton" class="btn btn-primary">Unggah Gambar</button>
+            <div class="custom-notification" id="imageCustomNotification">Gambar telah diunggah!</div>
           </div>
         </form>
       </div>
-      <h2 class="neumorphism bg-primary mb-3 mt-3 text-center text-light">Pengaturan Penghuni</h2>
+      <h2 class="neumorphism bg-dark p-3 mb-3 mt-3 text-light"><i class="fa-regular fa-users-gear"></i> Penghuni</h2>
       <form id="pengaturanPenghuniForm">
         <div class="mb-3">
           <label for="tahanan-laki" class="form-label">Tahanan Laki-Laki :</label>
@@ -83,8 +84,95 @@
           <label for="jumlah-total" class="form-label">Jumlah Total :</label>
           <input type="number" id="jumlah-total" class="form-control" value="0">
         </div>
-        <button type="button" id="simpanPengaturanPenghuni" class="btn btn-primary">Simpan</button>
+        <button type="button" id="simpanPengaturanPenghuni" class="btn btn-primary">Terapkan Data Penghuni</button>
+        <div class="custom-notification" id="penghuniCustomNotification">Data Penghuni telah diterapkan!</div>
       </form>
+      <!-- Form Pengaturan Regu Pengamanan (Kiri) dan (Kanan) dalam satu baris -->
+      <h2 class="neumorphism bg-dark p-3 mb-3 mt-3 text-light"><i class="fa-regular fa-user-police"></i> Personil Pengamanan</h2>
+      <div class="row">
+        <!-- Form Pengaturan Regu Pengamanan (Kiri) -->
+        <div class="col-md-6">
+          <form id="pengaturanReguFormKiri">
+            <div class="mb-0">
+              <label for="reguSelectKiri" class="form-label">Pilih Regu :</label>
+              <select id="reguSelectKiri" class="form-select">
+                <option value="" disabled selected>--- Pilih Regu ---</option>
+                <option value="ReguI">Regu I</option>
+                <option value="ReguII">Regu II</option>
+                <option value="ReguIII">Regu III</option>
+                <option value="ReguIV">Regu IV</option>
+                <option value="ReguBayangan">Regu Bayangan</option>
+              </select>
+            </div>
+            <!-- Form Input Manual (Kiri) -->
+            <div id="formInputManualKiri" style="display: none;">
+              <div class="mb-0">
+                <label for="namaKaRupamKiriManual" class="form-label">Nama Ka. Rupam:</label>
+                <input type="text" class="form-control" id="namaKaRupamKiriManual">
+              </div>
+              <div class="mb-0">
+                <label for="anggotaSatuKiriManual" class="form-label">Nama Anggota Satu:</label>
+                <input type="text" class="form-control" id="anggotaSatuKiriManual">
+              </div>
+              <div class="mb-0">
+                <label for="anggotaDuaKiriManual" class="form-label">Nama Anggota Dua:</label>
+                <input type="text" class="form-control" id="anggotaDuaKiriManual">
+              </div>
+              <div class="mb-0">
+                <label for="petugasP2UKiriManual" class="form-label">Nama Petugas P2U:</label>
+                <input type="text" class="form-control" id="petugasP2UKiriManual">
+              </div>
+              <div class="mb-0">
+                <label for="keteranganKiriManual" class="form-label">Keterangan:</label>
+                <input type="text" class="form-control" id="keteranganKiriManual">
+              </div>
+            </div>
+            <button type="button" id="terapkanButtonKiri" class="btn btn-primary">Terapkan</button>
+            <div class="custom-notification" id="reguKiriCustomNotification">Regu telah diterapkan!</div>
+          </form>
+        </div>
+        <!-- Form Pengaturan Regu Pengamanan (Kanan) -->
+        <div class="col-md-6">
+          <form id="pengaturanReguFormKanan">
+            <div class="mb-0">
+              <label for="reguSelectKanan" class="form-label">Pilih Regu:</label>
+              <select id="reguSelectKanan" class="form-select">
+                <option value="" disabled selected>--- Pilih Regu ---</option>
+                <option value="ReguI">Regu I</option>
+                <option value="ReguII">Regu II</option>
+                <option value="ReguIII">Regu III</option>
+                <option value="ReguIV">Regu IV</option>
+                <option value="ReguBayangan">Regu Bayangan</option>
+              </select>
+            </div>
+            <!-- Form Input Manual (Kanan) -->
+            <div id="formInputManualKanan" style="display: none;">
+              <div class="mb-0">
+                <label for="namaKaRupamKananManual" class="form-label">Nama Ka. Rupam:</label>
+                <input type="text" class="form-control" id="namaKaRupamKananManual">
+              </div>
+              <div class="mb-0">
+                <label for="anggotaSatuKananManual" class="form-label">Nama Anggota Satu:</label>
+                <input type="text" class="form-control" id="anggotaSatuKananManual">
+              </div>
+              <div class="mb-0">
+                <label for="anggotaDuaKananManual" class="form-label">Nama Anggota Dua:</label>
+                <input type="text" class="form-control" id="anggotaDuaKananManual">
+              </div>
+              <div class="mb-0">
+                <label for="petugasP2UKananManual" class="form-label">Nama Petugas P2U:</label>
+                <input type="text" class="form-control" id="petugasP2UKananManual">
+              </div>
+              <div class="mb-0">
+                <label for="keteranganKananManual" class="form-label">Keterangan:</label>
+                <input type="text" class="form-control" id="keteranganKananManual">
+              </div>
+            </div>
+            <button type="button" id="terapkanButtonKanan" class="btn btn-primary">Terapkan</button>
+            <div class="custom-notification" id="reguKananCustomNotification">Regu telah diterapkan!</div>
+          </form>
+        </div>
+      </div>
     </div>
     <!-- Tombol "Download Gambar" dengan desain neumorphism dan margin bawah -->
     <div class="text-center mt-4 mb-4">
@@ -134,35 +222,37 @@
       </div>
       <h2 class="neumorphism bg-light mt-4 mb-4">B. Personil Pengamanan</h2>
       <div class="row rupam-grid">
+        <!-- Bagian Regu Pengamanan Kiri -->
         <div class="col-md-12">
-          <h3 class="text-center text-dark">Regu Pengamanan Kiri</h3>
-          <p><span class="fw-bold">Ka. Rupam :</span> Nama Ka. Rupam Kiri</p>
+          <h3 class="text-center text-dark">Regu Pengamanan</h3>
+          <p><span class="fw-bold">Ka. Rupam :</span> <strong><span id="kaRupamKiri"></span></strong></p>
           <p class="fw-bold">Anggota :</p>
           <ol>
-            <li>Nama Anggota Satu Kiri</li>
-            <li>Nama Anggota Dua Kiri</li>
+            <li><strong><span id="anggotaSatuKiri"></span></strong></li>
+            <li><strong><span id="anggotaDuaKiri"></span></strong></li>
           </ol>
-          <p><span class="fw-bold">Petugas P2U :</span> Nama Petugas P2U Kiri</p>
-          <p><span class="fw-bold">Keterangan :</span> Keterangan Kiri</p>
+          <p><span class="fw-bold">Petugas P2U :</span> <strong><span id="petugasP2UKiri"></span></strong></p>
+          <p><span class="fw-bold">Keterangan :</span> <strong><span id="keteranganKiri"></span></strong></p>
         </div>
+        <!-- Bagian Regu Pengamanan Kanan -->
         <div class="col-md-12">
-          <h3 class="text-center text-dark">Regu Pengamanan Kanan</h3>
-          <p><span class="fw-bold">Ka. Rupam :</span> Nama Ka. Rupam Kanan</p>
+          <h3 class="text-center text-dark">Regu Pengamanan</h3>
+          <p><span class="fw-bold">Ka. Rupam :</span> <strong><span id="kaRupamKanan"></span></strong></p>
           <p class="fw-bold">Anggota :</p>
           <ol>
-            <li>Nama Anggota Satu Kanan</li>
-            <li>Nama Anggota Dua Kanan</li>
+            <li><strong><span id="anggotaSatuKanan"></span></strong></li>
+            <li><strong><span id="anggotaDuaKanan"></span></strong></li>
           </ol>
-          <p><span class="fw-bold">Petugas P2U :</span> Nama Petugas P2U Kanan</p>
-          <p><span class="fw-bold">Keterangan :</span> Keterangan Kanan</p>
+          <p><span class="fw-bold">Petugas P2U :</span> <strong><span id="petugasP2UKanan"></span></strong></p>
+          <p><span class="fw-bold">Keterangan :</span> <strong><span id="keteranganKanan"></span></strong></p>
         </div>
         <div class="col-md-12">
           <h3 class="text-center text-dark">Petugas Piket</h3>
-          <p><span class="fw-bold">Perwira Piket :</span> Nama Perwira Piket</p>
-          <p><span class="fw-bold">Petugas Dapur :</span> Nama Petugas Dapur</p>
-          <p><span class="fw-bold">Piket Blok Wanita :</span> Nama Piket Blok Wanita</p>
-          <p><span class="fw-bold">Piket Staff KPR :</span> Nama Piket Staff KPR</p>
-          <p><span class="fw-bold">Piket Staff Siang :</span> Nama Piket Staff Siang</p>
+          <p><span class="fw-bold">Perwira Piket :</span> <strong>-</strong></p>
+          <p><span class="fw-bold">Petugas Dapur :</span> <strong>-</strong></p>
+          <p><span class="fw-bold">Piket Blok Wanita :</span> <strong>-</strong></p>
+          <p><span class="fw-bold">Piket Staff KPR :</span> <strong>-</strong></p>
+          <p><span class="fw-bold">Piket Staff Siang :</span> <strong>-</strong></p>
         </div>
       </div>
       <h2 class="neumorphism bg-light mt-4 mb-4">C. Inventaris Regu Pengamanan</h2>
@@ -214,55 +304,10 @@
     <!-- Tambahkan script JavaScript Bootstrap (Jika diperlukan) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
     <script src="/assets/js/html2canvas.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/e-astekpam/assets/js/all.min.js"></script> -->
     <script src="/assets/js/all.min.js"></script>
-
-        <div class="custom-notification" id="notification">
-          Mencetak sumber kode tidak diizinkan.
-      </div>
-  
-      <script type="text/javascript">
-          document.addEventListener('keydown', function(event) {
-              // Mencegah kombinasi tombol CTRL + U
-              if (event.ctrlKey && event.key === 'u') {
-                  event.preventDefault();
-                  document.getElementById('notification').classList.add('show-notification');
-                  setTimeout(function() {
-                      document.getElementById('notification').classList.remove('show-notification');
-                  }, 5000);
-              }
-          });
-      </script>
-
-    <script>
-      let isModalVisible = false;
-      let notificationModal = null;
-      
-      function showNotificationModal(event) {
-          event.preventDefault();
-          if (!isModalVisible) {
-              notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
-              notificationModal.show();
-              isModalVisible = true;
-      
-              // Setelah modal tertutup, reset isModalVisible menjadi false
-              notificationModal._element.addEventListener('hidden.bs.modal', function () {
-                  isModalVisible = false;
-              });
-          }
-      }
-      
-      document.body.addEventListener('contextmenu', function (e) {
-          showNotificationModal(e);
-      });
-      
-      // Fungsi untuk menutup modal notifikasi
-      function closeNotificationModal() {
-          if (notificationModal) {
-              notificationModal.hide();
-          }
-      }
-    </script>
+    <div class="custom-notification" id="notification">
+      Lihat Sumber Halaman tidak diizinkan.
+    </div>
     <!-- Modal Notifikasi -->
     <div class="modal fade custom-modal" id="notificationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -281,189 +326,45 @@
         </div>
       </div>
     </div>
-
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-  // Event listener untuk tombol "Download Gambar"
-  const t = document.querySelector(".container");
-  document.getElementById("downloadButton").addEventListener("click", function () {
-      html2canvas(t, {
-          scale: 2,
-          useCORS: true
-      }).then(function (t) {
-          const e = t.toDataURL("image/png");
-          const n = new Date();
-          const a = n.getFullYear();
-          const d = String(n.getMonth() + 1).padStart(2, "0");
-          const o = `laporan_${String(n.getDate()).padStart(2, "0")}_${d}_${a}_${String(n.getHours()).padStart(2, "0")}${String(n.getMinutes()).padStart(2, "0")}${String(n.getSeconds()).padStart(2, "0")}${String(n.getMilliseconds()).padStart(3, "0")}_${String(Math.floor(1e6 * Math.random())).padStart(6, "0")}.png`;
-          const r = document.createElement("a");
-          r.href = e;
-          r.download = o;
-          r.style.display = "none";
-          document.body.appendChild(r);
-          r.click();
-          document.body.removeChild(r);
-      });
-  });
-
-  // Event listener untuk menampilkan tanggal saat ini
-  const currentDate = new Date();
-  const dateText = `${["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"][currentDate.getDay()]}, ${currentDate.getDate()} ${["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"][currentDate.getMonth()]} ${currentDate.getFullYear()}`;
-  document.getElementById("tanggalSekarang").textContent = dateText;
-
-  // Event listener untuk tombol "Terapkan Jadwal"
-  const jadwalSelect = document.getElementById("jadwal");
-  const terapkanJadwalButton = document.getElementById("terapkanJadwal");
-  const judulJadwal = document.getElementById("judulJadwal");
-  const waktu = document.getElementById("waktu");
-
-  terapkanJadwalButton.addEventListener("click", function () {
-      switch (jadwalSelect.value) {
-          case "pagi_siang":
-              judulJadwal.textContent = "RUPAM PAGI KE RUPAM SIANG";
-              waktu.textContent = "13.00";
-              updateReguPengamananText("Pagi", "Siang");
-              break;
-          case "siang_malam":
-              judulJadwal.textContent = "RUPAM SIANG KE RUPAM MALAM";
-              waktu.textContent = "19.00";
-              updateReguPengamananText("Siang", "Malam");
-              break;
-          case "malam_pagi":
-              judulJadwal.textContent = "RUPAM MALAM KE RUPAM PAGI";
-              waktu.textContent = "07.00";
-              updateReguPengamananText("Malam", "Pagi");
-              break;
-          default:
-              console.error("Pilihan tidak valid");
-      }
-  });
-
-  function updateReguPengamananText(leftShift, rightShift) {
-      const leftRegu = document.querySelector(".rupam-grid .col-md-12:nth-child(1) h3");
-      const rightRegu = document.querySelector(".rupam-grid .col-md-12:nth-child(2) h3");
-
-      leftRegu.textContent = `Regu Pengamanan ${leftShift}`;
-      rightRegu.textContent = `Regu Pengamanan ${rightShift}`;
-  }
-
-  // Fungsi untuk memperbarui tampilan jumlah penghuni
-  function updatePenghuniDisplay() {
-      const tahananLaki = document.getElementById("tahanan-laki").value;
-      const tahananPerempuan = document.getElementById("tahanan-perempuan").value;
-      const narapidanaLaki = document.getElementById("narapidana-laki").value;
-      const narapidanaPerempuan = document.getElementById("narapidana-perempuan").value;
-      const jumlahDalam = document.getElementById("jumlah-dalam").value;
-      const jumlahLuar = document.getElementById("jumlah-luar").value;
-      const jumlahTotal = document.getElementById("jumlah-total").value;
-
-      const penghuniValues = [tahananLaki, tahananPerempuan, narapidanaLaki, narapidanaPerempuan, jumlahDalam, jumlahLuar, jumlahTotal];
-      const penghuniItems = document.querySelectorAll(".penghuni-container .penghuni-item .penghuni-value");
-
-      for (let i = 0; i < penghuniValues.length; i++) {
-          if (penghuniValues[i] === "0") {
-              penghuniItems[i].textContent = "-";
-          } else {
-              penghuniItems[i].textContent = penghuniValues[i] + " Orang";
+          // Fungsi untuk menampilkan notifikasi dan mengatur teks notifikasi
+          function showCustomNotification(notificationId, message) {
+              const notification = document.getElementById(notificationId);
+              notification.innerText = message;
+              notification.style.display = "block";
+              setTimeout(function() {
+                  notification.style.display = "none";
+              }, 3000); // Notifikasi akan hilang setelah 3 detik
           }
-      }
-  }
-
-  // Event listener untuk tombol "Simpan Pengaturan Penghuni"
-  document.getElementById("simpanPengaturanPenghuni").addEventListener("click", function () {
-      updatePenghuniDisplay();
-  });
-
-  updatePenghuniDisplay();
-
-  // Event listener untuk tombol "Upload Gambar"
-  document.getElementById("uploadImageButton").addEventListener("click", function () {
-      const uploadImage = document.getElementById("uploadImage");
-      const uploadedImage = document.getElementById("uploadedImage");
-      const imageContainer = document.getElementById("imageContainer");
-      const selectedFile = uploadImage.files[0];
-      if (selectedFile) {
-          const reader = new FileReader();
-          reader.onload = function (e) {
-              uploadedImage.src = e.target.result;
-              imageContainer.style.display = "block";
-          };
-          reader.readAsDataURL(selectedFile);
-      } else {
-          alert("Silakan pilih gambar terlebih dahulu.");
-      }
-  });
-
-    // Mencari teks yang mencakup kriteria yang Anda sebutkan
-    var copyrightText = "Generated by E-ASTEKPAM | Copyright ©2023 Eliyanto Sarage - All Rights Reserved";
-    var githubLink = "https://eliyantosarage.github.io/";
-
-    if (document.body.textContent.indexOf(copyrightText) === -1 && document.body.innerHTML.indexOf(githubLink) === -1) {
-        // Jika teks yang Anda cari tidak ditemukan, alihkan ke URL yang ditentukan
-        window.location.href = "https://eliyantosarage.github.io/";
-    }
-});
+      
+          // Menambahkan event listener untuk tombol "Terapkan Jadwal"
+          document.getElementById("terapkanJadwal").addEventListener("click", function () {
+              showCustomNotification("jadwalCustomNotification", "Jadwal telah diterapkan!");
+          });
+      
+          // Menambahkan event listener untuk tombol "Unggah Gambar"
+          document.getElementById("uploadImageButton").addEventListener("click", function () {
+              showCustomNotification("imageCustomNotification", "Gambar telah diunggah!");
+          });
+      
+          // Menambahkan event listener untuk tombol "Terapkan Data Penghuni"
+          document.getElementById("simpanPengaturanPenghuni").addEventListener("click", function () {
+              showCustomNotification("penghuniCustomNotification", "Data Penghuni telah disimpan!");
+          });
+      
+          // Menambahkan event listener untuk tombol "Terapkan Regu" (Kiri)
+          document.getElementById("terapkanButtonKiri").addEventListener("click", function () {
+      const selectedRegu = document.getElementById("reguSelectKiri").value;
+      showCustomNotification("reguKiriCustomNotification", "" + selectedRegu + " telah diterapkan!");
+          });
+      
+          // Menambahkan event listener untuk tombol "Terapkan Regu" (Kanan)
+          document.getElementById("terapkanButtonKanan").addEventListener("click", function () {
+            const selectedRegu = document.getElementById("reguSelectKanan").value;
+            showCustomNotification("reguKananCustomNotification", "" + selectedRegu + " telah diterapkan!");
+          });
+      });
     </script>
-
-<script>
-  // Event listener untuk tombol "Atur Regu Pengamanan"
-  document.getElementById("aturReguPengamanan").addEventListener("click", function () {
-    const kehadiranSelect = document.getElementById("kehadiran");
-    const reguSelect = document.getElementById("regu");
-    const kaRupamInput = document.getElementById("ka-rupam");
-    const anggotaSatuInput = document.getElementById("anggota-satu");
-    const anggotaDuaInput = document.getElementById("anggota-dua");
-    const petugasP2UInput = document.getElementById("petugas-p2u");
-
-    if (kehadiranSelect.value === "lengkap") {
-      // Jika memilih "Hadir Lengkap"
-      switch (reguSelect.value) {
-        case "I":
-          kaRupamInput.value = "Sutejo";
-          anggotaSatuInput.value = "Hasan Shoimaini";
-          anggotaDuaInput.value = "Wisnu Murti Wijaya";
-          petugasP2UInput.value = "Dipta Zaza Diandaru";
-          break;
-        case "II":
-          kaRupamInput.value = "Ahmad Mahin";
-          anggotaSatuInput.value = "Nana Heru Susilo";
-          anggotaDuaInput.value = "Rizky Fadli";
-          petugasP2UInput.value = "Eliyanto Sarage";
-          break;
-        case "III":
-          kaRupamInput.value = "Hery Purwoko S";
-          anggotaSatuInput.value = "Donny Chandra N";
-          anggotaDuaInput.value = "Ibnu Suganda";
-          petugasP2UInput.value = "Zaenudin";
-          break;
-        case "IV":
-          kaRupamInput.value = "Supriyono";
-          anggotaSatuInput.value = "Naufal Allaam Firdaus";
-          anggotaDuaInput.value = "Eko Arif Hidayat";
-          petugasP2UInput.value = "Zeonovandhie Kukuh P";
-          break;
-        default:
-          console.error("Pilihan tidak valid");
-      }
-    } else {
-      // Jika memilih "Tidak Lengkap", reset semua input
-      kaRupamInput.value = "";
-      anggotaSatuInput.value = "";
-      anggotaDuaInput.value = "";
-      petugasP2UInput.value = "";
-    }
-  });
-
-  // Event listener untuk mengubah tampilan saat memilih "Hadir Lengkap" atau "Tidak Lengkap"
-  document.getElementById("kehadiran").addEventListener("change", function () {
-    const reguDetails = document.getElementById("regu-details");
-    if (this.value === "lengkap") {
-      reguDetails.style.display = "block";
-    } else {
-      reguDetails.style.display = "none";
-    }
-  });
-</script>
-
   </body>
 </html>

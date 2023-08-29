@@ -591,15 +591,13 @@ body {
   }
 
   .get-source-code a:hover {
-    opacity: 75%;
+    color: #007bff;
   }
   
   .get-source-code:hover {
     pointer-events: all;
     box-shadow: inset 5px 5px 10px #b5b5b5,
       inset -5px -5px 10px #ffffff;
-    transform: translateX(10px);
-    opacity: 75%;
   }
 
   .get-source-code .fa-code {
@@ -614,7 +612,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 50px;
+    padding: 20px 50px;
     background-color: #f44336;
     color: white;
     border-radius: 5px;
@@ -624,4 +622,9 @@ body {
 
 .show-notification {
     display: block;
+}
+
+.fa-gear-complex-code,.fa-users-gear,.fa-user-police {
+  margin-right: 10px;
+  margin-left: 10px;
 }
