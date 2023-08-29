@@ -6,14 +6,14 @@
     <meta name="description" content="E-ASTEKPAM adalah sistem elektronik untuk laporan ASTEKPAM. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.">
     <title>E-ASTEKPAM</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/svg" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/github.svg">
+    <link rel="icon" type="image/svg" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg">
     <!-- Tambahkan link CSS Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <!-- Tambahkan link CSS Default -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/eliyantosarage/e-astekpam@main/assets/css/all.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/e-astekpam/assets/css/all.min.css"> -->
     <link href="/assets/css/all.min.css" rel="stylesheet">
     <!-- Tambahkan link CSS Fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/6.4.2/css/all.min.css">
     <!-- Tambahkan link Google Fonts untuk font Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Tambahkan kode CSS kustom di bawah ini -->
@@ -23,6 +23,11 @@
     <div class="container-head text-center mt-4">
       <h1>E-ASTEKPAM</h1>
       <h2>Sistem elektronik untuk laporan <strong>Apel Serah Terima Regu Pengamanan</strong>. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.</h2>
+      <button class="get-source-code">
+      <a href="https://github.com/eliyantosarage/e-astekpam/" target="_blank">
+      <i class="fa-solid fa-code"></i> Get Source Code
+      </a>
+      </button>
     </div>
     <!-- Control Container -->
     <div class="control-container">
@@ -90,12 +95,12 @@
     <div class="container mt-4">
       <h1 class="mt-4 text-center" style="letter-spacing: 0.05em;">NAMA UNIT PELAKSANA TEKNIS (UPT)</h1>
       <h2 class="sub-heading">Apel Serah Terima Regu Pengamanan (ASTEKPAM)</h2>
-      <p class="lead text-center"><span id="tanggalSekarang" class="lead text-center"></span> PUKUL <span id="waktu">{waktu}</span> WIB</p>
+      <p class="lead text-center"><span id="tanggalSekarang" class="lead text-center"></span> PUKUL <span id="waktu">waktu</span> WIB</p>
       <!-- Container untuk gambar -->
       <div id="imageContainer" style="display: none;">
         <img id="uploadedImage" src="" alt="ASTEKPAM IMAGE">
       </div>
-      <p class="mt-4">MOHON IZIN MELAPORKAN ASTEKPAM <strong id="judulJadwal">RUPAM {SEKARANG} KE RUPAM {SELANJUTNYA}</strong> BERJALAN TERTIB DAN AMAN, DENGAN RINCIAN SEBAGAI BERIKUT :</p>
+      <p class="mt-4">MOHON IZIN MELAPORKAN ASTEKPAM <strong id="judulJadwal">RUPAM SEKARANG KE RUPAM SELANJUTNYA</strong> BERJALAN TERTIB DAN AMAN, DENGAN RINCIAN SEBAGAI BERIKUT :</p>
       <h2 class="neumorphism bg-light mt-4 mb-4">A. Penghuni</h2>
       <div class="penghuni-container">
         <div class="penghuni-item">
@@ -130,69 +135,69 @@
       <h2 class="neumorphism bg-light mt-4 mb-4">B. Personil Pengamanan</h2>
       <div class="row rupam-grid">
         <div class="col-md-12">
-          <h3 class="text-center">Regu Pengamanan {Kiri}</h3>
-          <p><span class="fw-bold">Ka. Rupam :</span> {Nama Ka. Rupam}</p>
+          <h3 class="text-center text-dark">Regu Pengamanan Kiri</h3>
+          <p><span class="fw-bold">Ka. Rupam :</span> Nama Ka. Rupam Kiri</p>
           <p class="fw-bold">Anggota :</p>
           <ol>
-            <li>{Nama Anggota Satu}</li>
-            <li>{Nama Anggota Dua}</li>
+            <li>Nama Anggota Satu Kiri</li>
+            <li>Nama Anggota Dua Kiri</li>
           </ol>
-          <p><span class="fw-bold">Petugas P2U :</span> {Nama Petugas P2U}</p>
-          <p><span class="fw-bold">Keterangan :</span> {Keterangan}</p>
+          <p><span class="fw-bold">Petugas P2U :</span> Nama Petugas P2U Kiri</p>
+          <p><span class="fw-bold">Keterangan :</span> Keterangan Kiri</p>
         </div>
         <div class="col-md-12">
-          <h3 class="text-center">Regu Pengamanan {Kanan}</h3>
-          <p><span class="fw-bold">Ka. Rupam :</span> {Nama Ka. Rupam}</p>
+          <h3 class="text-center text-dark">Regu Pengamanan Kanan</h3>
+          <p><span class="fw-bold">Ka. Rupam :</span> Nama Ka. Rupam Kanan</p>
           <p class="fw-bold">Anggota :</p>
           <ol>
-            <li>{Nama Anggota Satu}</li>
-            <li>{Nama Anggota Dua}</li>
+            <li>Nama Anggota Satu Kanan</li>
+            <li>Nama Anggota Dua Kanan</li>
           </ol>
-          <p><span class="fw-bold">Petugas P2U :</span> {Nama Petugas P2U}</p>
-          <p><span class="fw-bold">Keterangan :</span> {Keterangan}</p>
+          <p><span class="fw-bold">Petugas P2U :</span> Nama Petugas P2U Kanan</p>
+          <p><span class="fw-bold">Keterangan :</span> Keterangan Kanan</p>
         </div>
         <div class="col-md-12">
-          <h3 class="text-center">Petugas Piket</h3>
-          <p><span class="fw-bold">Perwira Piket :</span> {Nama Perwira Piket}</p>
-          <p><span class="fw-bold">Petugas Dapur :</span> {Nama Petugas Dapur}</p>
-          <p><span class="fw-bold">Piket Blok Wanita :</span> {Nama Piket Blok Wanita}</p>
-          <p><span class="fw-bold">Piket Staff KPR :</span> {Nama Piket Staff KPR}</p>
-          <p><span class="fw-bold">Piket Staff Siang :</span> {Nama Piket Staff Siang}</p>
+          <h3 class="text-center text-dark">Petugas Piket</h3>
+          <p><span class="fw-bold">Perwira Piket :</span> Nama Perwira Piket</p>
+          <p><span class="fw-bold">Petugas Dapur :</span> Nama Petugas Dapur</p>
+          <p><span class="fw-bold">Piket Blok Wanita :</span> Nama Piket Blok Wanita</p>
+          <p><span class="fw-bold">Piket Staff KPR :</span> Nama Piket Staff KPR</p>
+          <p><span class="fw-bold">Piket Staff Siang :</span> Nama Piket Staff Siang</p>
         </div>
       </div>
       <h2 class="neumorphism bg-light mt-4 mb-4">C. Inventaris Regu Pengamanan</h2>
       <div class="inventaris-container">
         <div class="inventaris-item">
           <div class="inventaris-label">Senjata Api P3A :</div>
-          <div class="inventaris-value">1 Pucuk</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">Amunisi P3A Karet :</div>
-          <div class="inventaris-value">10 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">Borgol :</div>
-          <div class="inventaris-value">2 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">Metal Detector :</div>
-          <div class="inventaris-value">1 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">HT :</div>
-          <div class="inventaris-value">6 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">Senter :</div>
-          <div class="inventaris-value">1 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">Lonceng :</div>
-          <div class="inventaris-value">5 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">CCTV :</div>
-          <div class="inventaris-value">16 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
       </div>
       <p class="mt-4 text-center fw-bold" style="letter-spacing: 0.05em;">SITUASI UNIT PELAKSANA TEKNIS (UPT) DALAM KEADAAN AMAN DAN TERKENDALI</p>
@@ -207,11 +212,28 @@
       </footer>
     </div>
     <!-- Tambahkan script JavaScript Bootstrap (Jika diperlukan) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/eliyantosarage/e-astekpam@main/assets/js/html2canvas.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
     <script src="/assets/js/html2canvas.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/eliyantosarage/e-astekpam@main/assets/js/all.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/e-astekpam/assets/js/all.min.js"></script> -->
     <script src="/assets/js/all.min.js"></script>
+
+        <div class="custom-notification" id="notification">
+          Mencetak sumber kode tidak diizinkan.
+      </div>
+  
+      <script type="text/javascript">
+          document.addEventListener('keydown', function(event) {
+              // Mencegah kombinasi tombol CTRL + U
+              if (event.ctrlKey && event.key === 'u') {
+                  event.preventDefault();
+                  document.getElementById('notification').classList.add('show-notification');
+                  setTimeout(function() {
+                      document.getElementById('notification').classList.remove('show-notification');
+                  }, 5000);
+              }
+          });
+      </script>
+
     <script>
       let isModalVisible = false;
       let notificationModal = null;
@@ -259,5 +281,189 @@
         </div>
       </div>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+  // Event listener untuk tombol "Download Gambar"
+  const t = document.querySelector(".container");
+  document.getElementById("downloadButton").addEventListener("click", function () {
+      html2canvas(t, {
+          scale: 2,
+          useCORS: true
+      }).then(function (t) {
+          const e = t.toDataURL("image/png");
+          const n = new Date();
+          const a = n.getFullYear();
+          const d = String(n.getMonth() + 1).padStart(2, "0");
+          const o = `laporan_${String(n.getDate()).padStart(2, "0")}_${d}_${a}_${String(n.getHours()).padStart(2, "0")}${String(n.getMinutes()).padStart(2, "0")}${String(n.getSeconds()).padStart(2, "0")}${String(n.getMilliseconds()).padStart(3, "0")}_${String(Math.floor(1e6 * Math.random())).padStart(6, "0")}.png`;
+          const r = document.createElement("a");
+          r.href = e;
+          r.download = o;
+          r.style.display = "none";
+          document.body.appendChild(r);
+          r.click();
+          document.body.removeChild(r);
+      });
+  });
+
+  // Event listener untuk menampilkan tanggal saat ini
+  const currentDate = new Date();
+  const dateText = `${["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"][currentDate.getDay()]}, ${currentDate.getDate()} ${["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"][currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+  document.getElementById("tanggalSekarang").textContent = dateText;
+
+  // Event listener untuk tombol "Terapkan Jadwal"
+  const jadwalSelect = document.getElementById("jadwal");
+  const terapkanJadwalButton = document.getElementById("terapkanJadwal");
+  const judulJadwal = document.getElementById("judulJadwal");
+  const waktu = document.getElementById("waktu");
+
+  terapkanJadwalButton.addEventListener("click", function () {
+      switch (jadwalSelect.value) {
+          case "pagi_siang":
+              judulJadwal.textContent = "RUPAM PAGI KE RUPAM SIANG";
+              waktu.textContent = "13.00";
+              updateReguPengamananText("Pagi", "Siang");
+              break;
+          case "siang_malam":
+              judulJadwal.textContent = "RUPAM SIANG KE RUPAM MALAM";
+              waktu.textContent = "19.00";
+              updateReguPengamananText("Siang", "Malam");
+              break;
+          case "malam_pagi":
+              judulJadwal.textContent = "RUPAM MALAM KE RUPAM PAGI";
+              waktu.textContent = "07.00";
+              updateReguPengamananText("Malam", "Pagi");
+              break;
+          default:
+              console.error("Pilihan tidak valid");
+      }
+  });
+
+  function updateReguPengamananText(leftShift, rightShift) {
+      const leftRegu = document.querySelector(".rupam-grid .col-md-12:nth-child(1) h3");
+      const rightRegu = document.querySelector(".rupam-grid .col-md-12:nth-child(2) h3");
+
+      leftRegu.textContent = `Regu Pengamanan ${leftShift}`;
+      rightRegu.textContent = `Regu Pengamanan ${rightShift}`;
+  }
+
+  // Fungsi untuk memperbarui tampilan jumlah penghuni
+  function updatePenghuniDisplay() {
+      const tahananLaki = document.getElementById("tahanan-laki").value;
+      const tahananPerempuan = document.getElementById("tahanan-perempuan").value;
+      const narapidanaLaki = document.getElementById("narapidana-laki").value;
+      const narapidanaPerempuan = document.getElementById("narapidana-perempuan").value;
+      const jumlahDalam = document.getElementById("jumlah-dalam").value;
+      const jumlahLuar = document.getElementById("jumlah-luar").value;
+      const jumlahTotal = document.getElementById("jumlah-total").value;
+
+      const penghuniValues = [tahananLaki, tahananPerempuan, narapidanaLaki, narapidanaPerempuan, jumlahDalam, jumlahLuar, jumlahTotal];
+      const penghuniItems = document.querySelectorAll(".penghuni-container .penghuni-item .penghuni-value");
+
+      for (let i = 0; i < penghuniValues.length; i++) {
+          if (penghuniValues[i] === "0") {
+              penghuniItems[i].textContent = "-";
+          } else {
+              penghuniItems[i].textContent = penghuniValues[i] + " Orang";
+          }
+      }
+  }
+
+  // Event listener untuk tombol "Simpan Pengaturan Penghuni"
+  document.getElementById("simpanPengaturanPenghuni").addEventListener("click", function () {
+      updatePenghuniDisplay();
+  });
+
+  updatePenghuniDisplay();
+
+  // Event listener untuk tombol "Upload Gambar"
+  document.getElementById("uploadImageButton").addEventListener("click", function () {
+      const uploadImage = document.getElementById("uploadImage");
+      const uploadedImage = document.getElementById("uploadedImage");
+      const imageContainer = document.getElementById("imageContainer");
+      const selectedFile = uploadImage.files[0];
+      if (selectedFile) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+              uploadedImage.src = e.target.result;
+              imageContainer.style.display = "block";
+          };
+          reader.readAsDataURL(selectedFile);
+      } else {
+          alert("Silakan pilih gambar terlebih dahulu.");
+      }
+  });
+
+    // Mencari teks yang mencakup kriteria yang Anda sebutkan
+    var copyrightText = "Generated by E-ASTEKPAM | Copyright ©2023 Eliyanto Sarage - All Rights Reserved";
+    var githubLink = "https://eliyantosarage.github.io/";
+
+    if (document.body.textContent.indexOf(copyrightText) === -1 && document.body.innerHTML.indexOf(githubLink) === -1) {
+        // Jika teks yang Anda cari tidak ditemukan, alihkan ke URL yang ditentukan
+        window.location.href = "https://eliyantosarage.github.io/";
+    }
+});
+    </script>
+
+<script>
+  // Event listener untuk tombol "Atur Regu Pengamanan"
+  document.getElementById("aturReguPengamanan").addEventListener("click", function () {
+    const kehadiranSelect = document.getElementById("kehadiran");
+    const reguSelect = document.getElementById("regu");
+    const kaRupamInput = document.getElementById("ka-rupam");
+    const anggotaSatuInput = document.getElementById("anggota-satu");
+    const anggotaDuaInput = document.getElementById("anggota-dua");
+    const petugasP2UInput = document.getElementById("petugas-p2u");
+
+    if (kehadiranSelect.value === "lengkap") {
+      // Jika memilih "Hadir Lengkap"
+      switch (reguSelect.value) {
+        case "I":
+          kaRupamInput.value = "Sutejo";
+          anggotaSatuInput.value = "Hasan Shoimaini";
+          anggotaDuaInput.value = "Wisnu Murti Wijaya";
+          petugasP2UInput.value = "Dipta Zaza Diandaru";
+          break;
+        case "II":
+          kaRupamInput.value = "Ahmad Mahin";
+          anggotaSatuInput.value = "Nana Heru Susilo";
+          anggotaDuaInput.value = "Rizky Fadli";
+          petugasP2UInput.value = "Eliyanto Sarage";
+          break;
+        case "III":
+          kaRupamInput.value = "Hery Purwoko S";
+          anggotaSatuInput.value = "Donny Chandra N";
+          anggotaDuaInput.value = "Ibnu Suganda";
+          petugasP2UInput.value = "Zaenudin";
+          break;
+        case "IV":
+          kaRupamInput.value = "Supriyono";
+          anggotaSatuInput.value = "Naufal Allaam Firdaus";
+          anggotaDuaInput.value = "Eko Arif Hidayat";
+          petugasP2UInput.value = "Zeonovandhie Kukuh P";
+          break;
+        default:
+          console.error("Pilihan tidak valid");
+      }
+    } else {
+      // Jika memilih "Tidak Lengkap", reset semua input
+      kaRupamInput.value = "";
+      anggotaSatuInput.value = "";
+      anggotaDuaInput.value = "";
+      petugasP2UInput.value = "";
+    }
+  });
+
+  // Event listener untuk mengubah tampilan saat memilih "Hadir Lengkap" atau "Tidak Lengkap"
+  document.getElementById("kehadiran").addEventListener("change", function () {
+    const reguDetails = document.getElementById("regu-details");
+    if (this.value === "lengkap") {
+      reguDetails.style.display = "block";
+    } else {
+      reguDetails.style.display = "none";
+    }
+  });
+</script>
+
   </body>
 </html>
